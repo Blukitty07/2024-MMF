@@ -52,16 +52,12 @@ def string_checker(question, num_letters, valid_responses):
 
     error = "hey dafthead enter in {} or {}, not your own option". format(valid_responses[0], valid_responses[1])
 
-    if num_letters == 1:
-        short_version = 1
-    else:
-        short_version = 2
 
     while True:
         response = input(question).lower()
 
         for item in valid_responses:
-            if response == item[:short_version] or response == item:
+            if response == item[:num_letters] or response == item:
                 return item
 
         print(error)
